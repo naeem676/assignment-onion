@@ -5,10 +5,13 @@ import logo from '../../logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
+
 const Heder = () => {
     return (
+        <div  >
+
         <div>
-            <Nav className='nav'  variant="pills" defaultActiveKey="/home">
+        <Nav className='nav'  variant="pills" defaultActiveKey="/home">
             
             <Nav.Item style={{paddingTop:'10px'}}>
                 <img style={{width:'150px'}} src={logo} alt="" srcset=""/>
@@ -29,9 +32,25 @@ const Heder = () => {
               marginRight:'20px',
               paddingTop:'10px'
              }} >
-                  <Nav.Link className='home'  href="/home">home</Nav.Link>
+                  <button><Nav.Link className='home'  href="/home">home</Nav.Link></button>
                </Nav.Item>
                </Nav>
+  
+        </div>
+        
+               <div className='banner'>
+
+               <div className='input'>
+               <h1>Best food waiting for your belly</h1>
+               <input type="text"/>
+               <button>Search</button>
+               </div>
+               
+
+
+               
+
+               </div>
   
           
         </div>

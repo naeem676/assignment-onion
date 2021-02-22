@@ -1,12 +1,48 @@
 .nav{
     background-color:whitesmoke;
-    height: 50px;
+    height: 60px;
     display: flex;
     
 }
 .home{
     text-decoration: none;
+    color: white;
     
     
 
+}
+.banner{
+
+   background-image: linear-gradient(rgba(215, 224, 228, 0.74), rgba(255, 51, 0, 0.5)), url("../../bannerbackground.png") ;
+   background-repeat: no-repeat;
+   background-size: 1500px 500px;
+   width: 1450px;
+   height: 1000px;
+   text-align: center;
+   
+   
+   
+  
+
+}
+button{
+    
+    background-color:red;
+    margin: 5px;
+    padding: 5px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    
+    
+}
+
+.input{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
 }
