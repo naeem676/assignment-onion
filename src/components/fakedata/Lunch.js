@@ -1,0 +1,57 @@
+var lunch =  [
+    {
+      "name": "Healthy meal plan",
+      "price": "$23.99",
+      "text": "How we dream about our future",
+      "key": "NA1",
+      "phone": "011-962-7516",
+      "cell": "081-454-0666",
+      "picture": "../fakedata/lunch/lunch6.png",
+    },
+    {
+      "name": "Fried chicken bento",
+      "price":"$9.99",
+      "text": "How we dream about our future",
+      "key": "NA2",
+      "phone": "011-962-7516",
+      "cell": "081-454-0666",
+      "picture": "../fakedata/lunch/lunch5.png",
+    },
+    {
+      "name": "Tarragon-Rubbed Salmon",
+      "price": "$6.99",
+      "text": "How we dream about our future",
+      "key": "NA1",
+      "phone": "011-962-7516",
+      "cell": "081-454-0666",
+      "picture": "../fakedata/lunch/lunch3.png",
+    },
+    {
+      "name": "Indian Lunch",
+      "price": "$8.99",
+      "text": "How we dream about our future",
+      "key": "NA1",
+      "phone": "011-962-7516",
+      "cell": "081-454-0666",
+      "picture": "../fakedata/lunch/lunch4.png",
+    },
+    {
+      "name": "Beff stick",
+      "price": "$15.99",
+      "text": "How we dream about our future",
+      "key": "NA1",
+      "phone": "011-962-7516",
+      "cell": "081-454-0666",
+      "picture": "../fakedata/lunch/lunch1.png",
+    },
+    {
+      "name": "Honey-Sony-Glazed Salmon with Peppers",
+      "price": "$7.99",
+      "text": "How we dream about our future",
+      "key": "NA1",
+      "phone": "011-962-7516",
+      "cell": "081-454-0666",
+      "picture": "../fakedata/lunch/lunch2.png",
+    }
+  ]
+  export default lunch;
