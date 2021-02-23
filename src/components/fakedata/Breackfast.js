@@ -1,4 +1,9 @@
-
+import breakfast1 from "./Breakfast/breakfast1.png";
+import breakfast2 from "./Breakfast/breakfast2.png";
+import breakfast3 from "./Breakfast/breakfast3.png";
+import breakfast4 from "./Breakfast/breakfast4.png";
+import breakfast5 from "./Breakfast/breakfast5.png";
+import breakfast6 from "./Breakfast/breakfast6.png";
 var breakfast =  [
       {
         "name": "Begel & cream cheese",
@@ -7,7 +12,7 @@ var breakfast =  [
         "key": "NA1",
         "phone": "011-962-7516",
         "cell": "081-454-0666",
-        "picture": "../fakedata/Breakfast/breakfast4.png",
+        "picture": breakfast4,
       },
       {
         "name": "Breakfast sandwich",
@@ -16,7 +21,7 @@ var breakfast =  [
         "key": "NA2",
         "phone": "011-962-7516",
         "cell": "081-454-0666",
-        "picture": "../fakedata/Breakfast/breakfast2.png",
+        "picture": breakfast2,
       },
       {
         "name": "Baked Chiken",
@@ -25,7 +30,7 @@ var breakfast =  [
         "key": "NA1",
         "phone": "011-962-7516",
         "cell": "081-454-0666",
-        "picture": "../fakedata/Breakfast/breakfast3.png",
+        "picture":breakfast3,
       },
       {
         "name": "Eggs benedick",
@@ -34,7 +39,7 @@ var breakfast =  [
         "key": "NA1",
         "phone": "011-962-7516",
         "cell": "081-454-0666",
-        "picture": "../fakedata/Breakfast/breakfast1.png",
+        "picture": breakfast1,
       },
       {
         "name": "toast croissant fried eggs",
@@ -43,7 +48,7 @@ var breakfast =  [
         "key": "NA1",
         "phone": "011-962-7516",
         "cell": "081-454-0666",
-        "picture": "../fakedata/Breakfast/breakfast6.png",
+        "picture": breakfast6,
       },
       {
         "name": "Full breakfast fried eggs Toast brunch",
@@ -52,7 +57,7 @@ var breakfast =  [
         "key": "NA1",
         "phone": "011-962-7516",
         "cell": "081-454-0666",
-        "picture": "../fakedata/Breakfast/breakfast5.png",
+        "picture": breakfast5,
       }
     ]
     export default breakfast;  

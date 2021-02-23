@@ -1,3 +1,9 @@
+import lunch1 from "./lunch/lunch1.png";
+import lunch2 from "./lunch/lunch2.png";
+import lunch3 from "./lunch/lunch3.png";
+import lunch4 from "./lunch/lunch4.png";
+import lunch5 from "./lunch/lunch5.png";
+import lunch6 from "./lunch/lunch6.png";
 var lunch =  [
     {
       "name": "Healthy meal plan",
@@ -6,7 +12,7 @@ var lunch =  [
       "key": "NA1",
       "phone": "011-962-7516",
       "cell": "081-454-0666",
-      "picture": "../fakedata/lunch/lunch6.png",
+      "picture": lunch6,
     },
     {
       "name": "Fried chicken bento",
@@ -15,7 +21,7 @@ var lunch =  [
       "key": "NA2",
       "phone": "011-962-7516",
       "cell": "081-454-0666",
-      "picture": "../fakedata/lunch/lunch5.png",
+      "picture": lunch5,
     },
     {
       "name": "Tarragon-Rubbed Salmon",
@@ -24,7 +30,7 @@ var lunch =  [
       "key": "NA1",
       "phone": "011-962-7516",
       "cell": "081-454-0666",
-      "picture": "../fakedata/lunch/lunch3.png",
+      "picture": lunch3,
     },
     {
       "name": "Indian Lunch",
@@ -33,7 +39,7 @@ var lunch =  [
       "key": "NA1",
       "phone": "011-962-7516",
       "cell": "081-454-0666",
-      "picture": "../fakedata/lunch/lunch4.png",
+      "picture": lunch4,
     },
     {
       "name": "Beff stick",
@@ -42,7 +48,7 @@ var lunch =  [
       "key": "NA1",
       "phone": "011-962-7516",
       "cell": "081-454-0666",
-      "picture": "../fakedata/lunch/lunch1.png",
+      "picture": lunch1,
     },
     {
       "name": "Honey-Sony-Glazed Salmon with Peppers",
@@ -51,7 +57,7 @@ var lunch =  [
       "key": "NA1",
       "phone": "011-962-7516",
       "cell": "081-454-0666",
-      "picture": "../fakedata/lunch/lunch2.png",
+      "picture": lunch2,
     }
   ]
   export default lunch;

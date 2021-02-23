@@ -1,3 +1,9 @@
+import dinner1 from "./Dinner/dinner1.png";
+import dinner2 from "./Dinner/dinner2.png";
+import dinner3 from "./Dinner/dinner3.png";
+import dinner4 from "./Dinner/dinner4.png";
+import dinner5 from "./Dinner/dinner5.png";
+import dinner6 from "./Dinner/dinner6.png";
 var dinner =  [
     {
       "name": "Salmon with Grapefruit and Lentil salad",
@@ -6,7 +12,7 @@ var dinner =  [
       "key": "NA1",
       "phone": "011-962-7516",
       "cell": "081-454-0666",
-      "picture": "../fakedata/Dinner/dinner6.png",
+      "picture": dinner6,
     },
     {
       "name": "Lemony salmon Piccata",
@@ -15,7 +21,7 @@ var dinner =  [
       "key": "NA2",
       "phone": "011-962-7516",
       "cell": "081-454-0666",
-      "picture": "../fakedata/Dinner/dinner2.png",
+      "picture": dinner2,
     },
     {
       "name": "Baked Chiken",
@@ -24,7 +30,7 @@ var dinner =  [
       "key": "NA1",
       "phone": "011-962-7516",
       "cell": "081-454-0666",
-      "picture": "../fakedata/Dinner/dinner1.png",
+      "picture": dinner1,
     },
     {
       "name": "Pork Tenderloin With Quinoa Pilaf",
@@ -33,7 +39,7 @@ var dinner =  [
       "key": "NA1",
       "phone": "011-962-7516",
       "cell": "081-454-0666",
-      "picture": "../fakedata/Dinner/dinner5.png",
+      "picture":dinner5,
     },
     {
       "name": "French fried with chines",
@@ -42,7 +48,7 @@ var dinner =  [
       "key": "NA1",
       "phone": "011-962-7516",
       "cell": "081-454-0666",
-      "picture": "../fakedata/Dinner/dinner4.png",
+      "picture": dinner4,
     },
     {
       "name": "Garlic butter baked salmon",
@@ -51,7 +57,7 @@ var dinner =  [
       "key": "NA1",
       "phone": "011-962-7516",
       "cell": "081-454-0666",
-      "picture": "../fakedata/Dinner/dinner3.png",
+      "picture": dinner3,
     }
   ]
   export default dinner;
