@@ -6,7 +6,10 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Resturent from '../Resturent/Resturent';
+import BreakfastOrder from '../breakfastOrder/BreakfastOrder';
+import LunchOrder from '../lunchOrder/LunchOrder';
+import DinnerOrder from '../dinnerOrder/DinnerOrder';
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -43,10 +46,8 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.background.paper,
     width: 500,
     flexGrow:1,
-    textDecoration: 'none'
     
   },
 }));
@@ -66,8 +67,8 @@ const FullWidthTabs = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar style={{marginLeft: '400px',}}  position="static" color="default">
-        <Tabs
+      <AppBar style={{marginLeft: '400px', boxShadow:'none', backgroundColor:'white'}}  position="static" color="default">
+        <Tabs 
           value={value}
           onChange={handleChange}
           indicatorColor="primary"
@@ -84,13 +85,13 @@ const FullWidthTabs = () => {
         
        
         <TabPanel value={value} index={0} dir={theme.direction}>
-        <Resturent></Resturent>
+        <BreakfastOrder></BreakfastOrder>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-        Lunch is comming soon
+        <LunchOrder></LunchOrder>
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          Dinner is comming soon
+         <DinnerOrder></DinnerOrder>
         </TabPanel>
      
     </div>

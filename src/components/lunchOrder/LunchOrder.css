@@ -1,0 +1,16 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    margin: 20px;
+    
+  }
+  .grid-item {
+    padding: 20px;
+    margin-left: 110px;
+    text-align: center;
+  }
+  .grid-item:hover{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    transform:translateY(-20px) ;
+  }
