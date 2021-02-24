@@ -1,5 +1,6 @@
 
 import './App.css';
+import Delivery from './components/delivary/Delivery';
 import FullWidthTabs from './components/FullWidthTabs/FullWidthTabs';
 import Heder from './components/heder/Heder';
 
@@ -10,6 +11,7 @@ function App() {
     <div >
     <Heder></Heder>
     <FullWidthTabs></FullWidthTabs>
+    <Delivery></Delivery>
     
     
      
