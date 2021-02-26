@@ -6,11 +6,14 @@ import lunch3 from "../fakedata/lunch/lunch3.png";
 import lunch4 from "../fakedata/lunch/lunch4.png";
 import lunch5 from "../fakedata/lunch/lunch5.png";
 import lunch6 from "../fakedata/lunch/lunch6.png";
+import { Link } from 'react-router-dom';
+
 
 const LunchOrder = () => {
     return (
         <div class="grid-container">
         <div class="grid-item">
+        <Link style={{textDecoration:'none'}} to='/lunch1st'>
         <div>
                       <img style={{width:'200px', height:'200px'}} src={lunch6} alt="" srcset=""/>
                   </div>
@@ -19,9 +22,11 @@ const LunchOrder = () => {
                       <h5>How we dream about our future</h5>
                       <p>$23.99</p>
                   </div> 
+                  </Link>
   
         </div>
         <div class="grid-item">
+        <Link style={{textDecoration:'none'}} to='/lunch2nd'>
         <div>
                       <img style={{width:'200px', height:'200px'}} src={lunch5} alt="" srcset=""/>
                   </div>
@@ -30,9 +35,11 @@ const LunchOrder = () => {
                       <h5>How we dream about our future</h5>
                       <p>$21.99</p>
                   </div> 
+                  </Link>
   
         </div>
         <div class="grid-item">
+        <Link style={{textDecoration:'none'}} to='/lunch3rd'>
         <div>
                       <img style={{width:'200px', height:'200px'}} src={lunch3} alt="" srcset=""/>
                   </div>
@@ -41,9 +48,11 @@ const LunchOrder = () => {
                       <h5>How we dream about our future</h5>
                       <p>$25.99</p>
                   </div> 
+                  </Link>
   
         </div> 
         <div class="grid-item">
+        <Link style={{textDecoration:'none'}} to='/lunch4th'>
         <div>
                       <img style={{width:'200px', height:'200px'}} src={lunch4} alt="" srcset=""/>
                   </div>
@@ -51,10 +60,12 @@ const LunchOrder = () => {
                       <h4>Indian Lunch</h4>
                       <h5>How we dream about our future</h5>
                       <p>$27.99</p>
-                  </div> 
+                  </div>
+                  </Link> 
   
         </div>
         <div class="grid-item">
+        <Link style={{textDecoration:'none'}} to='/lunch5th'>
         <div>
                       <img style={{width:'200px', height:'200px'}} src={lunch1} alt="" srcset=""/>
                   </div>
@@ -63,9 +74,11 @@ const LunchOrder = () => {
                       <h5>How we dream about our future</h5>
                       <p>$19.99</p>
                   </div> 
+                  </Link>
   
         </div>
         <div class="grid-item">
+        <Link style={{textDecoration:'none'}} to='/lunch6th'>
         <div>
                       <img style={{width:'200px', height:'200px'}} src={lunch2} alt="" srcset=""/>
                   </div>
@@ -73,7 +86,8 @@ const LunchOrder = () => {
                       <h4>Honey-Sony-Glazed Salmon with Peppers</h4>
                       <h5>How we dream about our future</h5>
                       <p>$24.99</p>
-                  </div> 
+                  </div>
+                  </Link> 
   
         </div>   
        

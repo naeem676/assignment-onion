@@ -9,6 +9,7 @@ import Box from '@material-ui/core/Box';
 import BreakfastOrder from '../breakfastOrder/BreakfastOrder';
 import LunchOrder from '../lunchOrder/LunchOrder';
 import DinnerOrder from '../dinnerOrder/DinnerOrder';
+import  './FullWidthTabs.css';
 
 
 function TabPanel(props) {
@@ -67,7 +68,7 @@ const FullWidthTabs = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar style={{marginLeft: '400px', boxShadow:'none', backgroundColor:'white'}}  position="static" color="default">
+      <AppBar style={{marginLeft:'400px', boxShadow:'none', backgroundColor:'white'}} position="static" color="default">
         <Tabs 
           value={value}
           onChange={handleChange}

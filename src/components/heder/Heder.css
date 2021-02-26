@@ -4,13 +4,7 @@
     display: flex;
     
 }
-.home{
-    text-decoration: none;
-    color: white;
-    
-    
 
-}
 .banner{
 
    background-image: linear-gradient(rgba(215, 224, 228, 0.74), rgba(255, 51, 0, 0.5)), url("../../bannerbackground.png") ;
@@ -25,19 +19,32 @@
   
 
 }
-button{
+.bton{
     
-    background-color:red;
+    background-color:rgba(185, 8, 8, 0.986);
     margin: 5px;
-    padding: 5px 20px;
+    padding: 10px 20px;
+    border: 1px solid gray;
     border-radius: 10px;
-    text-decoration: none;
+    
+    
     
     
 }
+.searchbtn{
+    color: white;
+    background-color: rgb(16, 83, 16);
+    width:30%;
+    height: 30%;
+    padding: 15px;
+    margin: 5px;
+    border:gray;
+    
 
-.input{
-    width: 100%;
+}
+
+.text{
+    width: 40%;
     height: auto;
     position: absolute;
     top: 50%;

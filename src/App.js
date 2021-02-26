@@ -17,11 +17,30 @@ import Break3rd from './components/breakfastMenu/Break3rd';
 import Break4th from './components/breakfastMenu/Break4th';
 import Break5th from './components/breakfastMenu/Break5th';
 import Break6th from './components/breakfastMenu/Break6th';
+import Lunch1st from './components/LunchMenu/Lunch1st';
+import Lunch2nd from './components/LunchMenu/Lunch2nd';
+import Lunch3rd from './components/LunchMenu/Lunch3rd';
+import Lunch4th from './components/LunchMenu/Lunch4th';
+import Lunch5th from './components/LunchMenu/Lunch5th';
+import Lunch6th from './components/LunchMenu/Lunch6th';
+import Dinner1st from './components/dinnerMenu/Dinner1st';
+import Dinner2nd from './components/dinnerMenu/Dinner2nd';
+import Dinner3rd from './components/dinnerMenu/Dinner3rd';
+import Dinner4th from './components/dinnerMenu/Dinner4th';
+import Dinner5th from './components/dinnerMenu/Dinner5th';
+import Dinner6th from './components/dinnerMenu/Dinner6th';
+import { createContext } from 'react';
+import { useState } from 'react';
+import Cart from './components/cart/Cart';
+
+export const CartContext = createContext();
 
 
 
 function App() {
+    const [cart, setCart] = useState([]);
   return (
+      <CartContext.Provider value={[cart, setCart]}>
     <Router >
   
     <Switch>
@@ -63,6 +82,45 @@ function App() {
           <Break6th></Break6th>
 
       </Route>
+      <Route path='/lunch1st'>
+          <Lunch1st></Lunch1st>
+      </Route>
+      <Route path='/lunch2nd'>
+          <Lunch2nd></Lunch2nd>
+      </Route>
+      <Route path='/lunch3rd'>
+          <Lunch3rd></Lunch3rd>
+      </Route>
+      <Route path='/lunch4th'>
+          <Lunch4th></Lunch4th>
+      </Route>
+      <Route path='/lunch5th'>
+          <Lunch5th></Lunch5th>
+      </Route>
+      <Route path='/lunch6th'>
+          <Lunch6th></Lunch6th>
+      </Route>
+      <Route path='/dinner1st'>
+          <Dinner1st></Dinner1st>
+      </Route>
+      <Route path='/dinner2nd'>
+          <Dinner2nd></Dinner2nd>
+      </Route>
+      <Route path='/dinner3rd'>
+          <Dinner3rd></Dinner3rd>
+      </Route>
+      <Route path='/dinner4th'>
+          <Dinner4th></Dinner4th>
+      </Route>
+      <Route path='/dinner5th'>
+          <Dinner5th></Dinner5th>
+      </Route>
+      <Route path='/dinner6th'>
+          <Dinner6th></Dinner6th>
+      </Route>
+      <Route path='/cart'>
+          <Cart></Cart>
+      </Route>
       <Route path='*'>
           <NoMatch></NoMatch>
 
@@ -75,6 +133,7 @@ function App() {
     
      
     </Router>
+    </CartContext.Provider>
   );
 }
 

@@ -1,7 +1,72 @@
 import React from 'react';
+import { useContext } from 'react';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { CartContext } from '../../App';
 import breakfast4 from "../fakedata/Breakfast/breakfast4.png";
 
 const Break1st = () => {
+    const [cart, setCart] = useContext(CartContext);
+    const [price, setPrice] = useState(6.99);
+    const [count, setCount] = useState(1);
+
+    const priceIncrese = () =>{
+        const plusCount = count + 1;
+        const plusPrice = price + 6.99;
+        const totalPlus = formatPrice(plusPrice)
+       
+        
+        setCount(plusCount);
+        setPrice(totalPlus);
+        
+        
+        
+
+    }
+    const priceDicrese = () =>{
+        const minsCount = count - 1;
+        const minsPrice = price - 6.99;
+        const totalMins = formatPrice(minsPrice)
+       
+        
+        setCount(minsCount);
+        setPrice(totalMins);
+
+    }
+    const formatPrice = num => {
+        const pricesion = num.toFixed(2);
+        return Number(pricesion);
+    }
+    if(count < 1){
+        const quantity = 1;
+        setCount(quantity)
+    }
+    if(price < 6.99){
+        const prices = 6.99;
+        setPrice(prices);
+    }
+
+    const history = useHistory();
+
+    const addToCart = () => {
+        history.push('/cart');
+     const breakFastItem = {
+        "name": "Begel & cream cheese",
+        "price": price,
+        "quantity": count,
+        "text": "How we dream about our future",
+        "key": "NA1",
+        "phone": "011-962-7516",
+        "cell": "081-454-0666",
+        "picture": breakfast4
+
+      }
+      setCart(breakFastItem);
+    }
+
+   
+
+    
     return (
         <div>
             <div style={{display:'flex', marginLeft:'500px'}}>
@@ -16,13 +81,14 @@ const Break1st = () => {
                     arrived way. Amazing foods are. <br/> Or and Increasing to in especially inquietude companiouns <br/> acceptance admiration.
                     Outweigh it families distance wandered ye.</p>
                    <div style={{display:'flex'}}>
-                   <h2>$6.99</h2>
-                    <button>-</button>
-                    <h2>0</h2>
-                    <button>+</button>
+                   <h2>$ {price}</h2>
+                    <button style={{marginLeft:'20px'}} onClick={priceDicrese}>-</button>
+                    <h2>{count}</h2>
+                    <button onClick={priceIncrese}>+</button>
                    </div>
-                    <button className='add'>Add</button>
+                    <button onClick={addToCart} className='add'>Add</button>
                 </div>
+                
                 <div><img style={{width:'80%'}} src={breakfast4} alt="" srcset=""/> </div>
             </div>
         </div>

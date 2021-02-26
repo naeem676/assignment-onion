@@ -32,7 +32,7 @@ const Heder = () => {
               marginRight:'20px',
               paddingTop:'10px'
              }} >
-                  <button><Nav.Link className='home'  href="/home">home</Nav.Link></button>
+                  <button className='bton'><Nav.Link style={{textDecoration:'none', color:'white'}}   href="/home">home</Nav.Link></button>
                </Nav.Item>
                </Nav>
   
@@ -40,10 +40,10 @@ const Heder = () => {
         
                <div className='banner'>
 
-               <div className='input'>
+               <div className='text'>
                <h1>Best food waiting for your belly</h1>
-               <input type="text"/>
-               <button>Search</button>
+               <input  type="text"/>
+               <button className='searchbtn' >Search</button>
                </div>
                
 
