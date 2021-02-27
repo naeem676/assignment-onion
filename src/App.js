@@ -32,6 +32,7 @@ import Dinner6th from './components/dinnerMenu/Dinner6th';
 import { createContext } from 'react';
 import { useState } from 'react';
 import Cart from './components/cart/Cart';
+import BreakfastOrder from './components/breakfastOrder/BreakfastOrder';
 
 export const CartContext = createContext();
 
@@ -120,6 +121,9 @@ function App() {
       </Route>
       <Route path='/cart'>
           <Cart></Cart>
+      </Route>
+      <Route path='/breakfastOrder'>
+          <BreakfastOrder></BreakfastOrder>
       </Route>
       <Route path='*'>
           <NoMatch></NoMatch>

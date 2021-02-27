@@ -1,0 +1,10 @@
+.add{
+    color: white;
+    background-color:rgb(204, 115, 130);
+    width: 30%;
+    
+    border: solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    
+}

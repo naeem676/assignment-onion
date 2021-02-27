@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { CartContext } from '../../App';
 import breakfast4 from "../fakedata/Breakfast/breakfast4.png";
+import './BreakCss.css';
 
 const Break1st = () => {
     const [cart, setCart] = useContext(CartContext);
@@ -61,7 +62,8 @@ const Break1st = () => {
         "picture": breakfast4
 
       }
-      setCart(breakFastItem);
+      const breakfast = [...cart, breakFastItem];
+      setCart(breakfast)
     }
 
    
@@ -82,9 +84,9 @@ const Break1st = () => {
                     Outweigh it families distance wandered ye.</p>
                    <div style={{display:'flex'}}>
                    <h2>$ {price}</h2>
-                    <button style={{marginLeft:'20px'}} onClick={priceDicrese}>-</button>
+                    <button className='count' style={{marginLeft:'20px'}} onClick={priceDicrese}>-</button>
                     <h2>{count}</h2>
-                    <button onClick={priceIncrese}>+</button>
+                    <button className='count' onClick={priceIncrese}>+</button>
                    </div>
                     <button onClick={addToCart} className='add'>Add</button>
                 </div>

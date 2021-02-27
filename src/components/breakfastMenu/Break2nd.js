@@ -5,12 +5,12 @@ import breakfast2 from "../fakedata/Breakfast/breakfast2.png";
 
 const Break2nd = () => {
     const[cart, setCart]= useContext(CartContext);
-    const [price, setPrice] = useState(9.99);
+    const [price, setPrice] = useState(7.99);
     const [count, setCount] = useState(1);
 
     const priceIncrese = () =>{
         const plusCount = count + 1;
-        const plusPrice = price + 9.99;
+        const plusPrice = price + 7.99;
         const totalPlus = formatPrice(plusPrice)
        
         
@@ -23,7 +23,7 @@ const Break2nd = () => {
     }
     const priceDicrese = () =>{
         const minsCount = count - 1;
-        const minsPrice = price - 9.99;
+        const minsPrice = price - 7.99;
         const totalMins = formatPrice(minsPrice)
        
         
@@ -39,8 +39,8 @@ const Break2nd = () => {
         const quantity = 1;
         setCount(quantity)
     }
-    if(price < 9.99){
-        const prices = 6.99;
+    if(price < 7.99){
+        const prices = 7.99;
         setPrice(prices);
     }
 
@@ -49,14 +49,16 @@ const Break2nd = () => {
         history.push('/cart');
         const breakSecond = {
             "name": "Breakfast sandwich",
-            "price":"$9.99",
+            "price": price,
             "text": "How we dream about our future",
             "key": "NA2",
+            "quantity": count,
             "phone": "011-962-7516",
             "cell": "081-454-0666",
             "picture": breakfast2
         }
-        setCart(breakSecond);
+        const breakfast = [...cart, breakSecond]
+        setCart(breakfast);
     }
 
     return (
@@ -74,9 +76,9 @@ const Break2nd = () => {
                     Outweigh it families distance wandered ye.</p>
                    <div style={{display:'flex'}}>
                    <h2>${price}</h2>
-                    <button onClick={priceDicrese}>-</button>
+                    <button className='count' onClick={priceDicrese}>-</button>
                     <h2>{count}</h2>
-                    <button onClick={priceIncrese}>+</button>
+                    <button className='count' onClick={priceIncrese}>+</button>
                    </div>
                     <button onClick={addToCard} className='add'>Add</button>
                 </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -10,6 +10,7 @@ import BreakfastOrder from '../breakfastOrder/BreakfastOrder';
 import LunchOrder from '../lunchOrder/LunchOrder';
 import DinnerOrder from '../dinnerOrder/DinnerOrder';
 import  './FullWidthTabs.css';
+import { CartContext } from '../../App';
 
 
 function TabPanel(props) {
@@ -54,9 +55,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const FullWidthTabs = () => {
+  const [cart, setCart] = useContext(CartContext);
     const classes = useStyles();
   const theme = useTheme();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(1);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -67,7 +69,9 @@ const FullWidthTabs = () => {
   };
 
   return (
-    <div className={classes.root}>
+    <div>
+      <div>
+      <div className={classes.root}>
       <AppBar style={{marginLeft:'400px', boxShadow:'none', backgroundColor:'white'}} position="static" color="default">
         <Tabs 
           value={value}
@@ -95,6 +99,11 @@ const FullWidthTabs = () => {
          <DinnerOrder></DinnerOrder>
         </TabPanel>
      
+    </div>
+    <div>
+       <button style={{color: cart ? 'red' : 'gry'}} >Reviwe</button>
+    </div>
+      </div>
     </div>
     );
 };
