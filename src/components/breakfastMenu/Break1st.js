@@ -63,7 +63,9 @@ const Break1st = () => {
 
       }
       const breakfast = [...cart, breakFastItem];
-      setCart(breakfast)
+        setCart(breakfast);
+        
+     
     }
 
    

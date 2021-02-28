@@ -16,6 +16,14 @@ body {
     text-align: center;
     
   }
+  .placeOrder{
+    color: white;
+    background-color: rgb(160, 178, 185);
+    width: 40%;
+    height: 10%;
+    border: steelblue;
+    
+  }
   
   form {
     max-width: 800px;

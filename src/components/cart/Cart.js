@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { CartContext } from '../../App';
 import { fakeData } from '../fakedata/initializ';
@@ -8,24 +8,39 @@ import { Link } from 'react-router-dom';
 import AllOrder from '../AllOrder/AllOrder';
 
 const Cart = () => {
+      
+    
+
     const { register, handleSubmit} = useForm();
   const onSubmit = data => console.log(data);
   const [cart, setCart]= useContext(CartContext);
-  console.log(cart);
   
-  
+  const total = cart.reduce((total, crt) => crt.price + total * crt.quantity, 0);
 
   
+  const [subTotal, setSubTotal] = useState(0);
   
+  
+  const findTotal = subTotal + total
+  const tax = Math.round(findTotal / 25 );
+  const fee = 2;
+  const grandTotal = findTotal + tax + fee;
+
+   if(findTotal < total){
+       const mins = total;
+       return mins;
+   }
+   
     
     return (
         <div>
             <div style={{display:'flex', marginLeft:'500px'}}>
                 <p style={{marginLeft:'40px'}}> <Link style={{textDecoration:'none'}} to='/breakfastOrder'>Breakfast</Link></p>
-                <p style={{marginLeft:'40px'}}>Lunch</p>
-                <p style={{marginLeft:'40px'}}>Dinner</p>
+                <p style={{marginLeft:'40px'}}> <Link style={{textDecoration:'none'}} to='/lunchOrder'>Lunch</Link></p>
+                <p style={{marginLeft:'40px'}}> <Link style={{textDecoration:'none'}} to='/dinnerOrder'>Dinner</Link></p>
+                <p style={{marginLeft:'400px'}}> <Link style={{textDecoration:'none'}} to='/home'>Home</Link></p>
             </div>
-            <div style={{display:'flex', justifyContent:'space-evenly'}}>
+            <div style={{display:'flex', justifyContent:'space-evenly', marginTop:'80px'}}>
                 <div >
                 
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -46,18 +61,28 @@ const Cart = () => {
                 </div>
                 <div>
                 {
-                    cart.map( cat => <AllOrder cart={cat}></AllOrder>)
+                    cart.map( cat => <AllOrder showCart={cat} key={cat.key} subTotal={[subTotal, setSubTotal]}></AllOrder>)
                 }
 
                 </div>
-                <div>
-                    <p>Subtotal item: $</p>
-                    <p>Tax:           $</p>
-                    <p>Deliver fee    $</p>
-                    <p>Total          $</p>
-                    <button>Place Order</button>
+                <div style={{ display:'flex', justifyContent:'space-between'}}>
+                    <div>
+                    <p>Subtotal {cart.length} item:</p>
+                    <p>Tax: </p>
+                    <p>Deliver fee</p>
+                    <p>Total</p>
+                    </div>
+                    <div>
+                        <p>${findTotal}</p>
+                        <p>${tax}</p>
+                        <p>${fee}</p>
+                        <p>${grandTotal}</p>
+                    </div>
+                    
 
                 </div>
+                <button className='placeOrder'>Place Order</button>
+                
                 
                 
                 </div>

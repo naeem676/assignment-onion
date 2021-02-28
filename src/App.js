@@ -33,6 +33,9 @@ import { createContext } from 'react';
 import { useState } from 'react';
 import Cart from './components/cart/Cart';
 import BreakfastOrder from './components/breakfastOrder/BreakfastOrder';
+import LunchOrder from './components/lunchOrder/LunchOrder';
+import DinnerOrder from './components/dinnerOrder/DinnerOrder';
+
 
 export const CartContext = createContext();
 
@@ -40,6 +43,7 @@ export const CartContext = createContext();
 
 function App() {
     const [cart, setCart] = useState([]);
+    
   return (
       <CartContext.Provider value={[cart, setCart]}>
     <Router >
@@ -125,6 +129,13 @@ function App() {
       <Route path='/breakfastOrder'>
           <BreakfastOrder></BreakfastOrder>
       </Route>
+      <Route path='/lunchOrder'>
+          <LunchOrder></LunchOrder>
+      </Route>
+      <Route path='/dinnerOrder'>
+          <DinnerOrder></DinnerOrder>
+      </Route>
+      
       <Route path='*'>
           <NoMatch></NoMatch>
 
