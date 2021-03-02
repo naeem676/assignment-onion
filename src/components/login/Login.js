@@ -156,7 +156,7 @@ const classes = useStyles();
         <div><img style={{width:'20%', height:'10%', marginTop:'100px'}} src={logo2} alt="" srcset=""/></div>
              
              <div style={{ marginTop:'20px', }}>
-             <p>email:{loginUser.email}</p>
+             
              <form onSubmit={handleSubmit}>
                         
                        { newUser && <input  name="name" onBlur={handleBlur}  placeholder='Name' />}

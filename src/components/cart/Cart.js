@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { CartContext, LoginContext } from '../../App';
+import { CartContext, LocationContext, LoginContext } from '../../App';
 import './Cart.css';
 import { Link } from 'react-router-dom';
 import AllOrder from '../AllOrder/AllOrder';
@@ -8,10 +8,18 @@ import AllOrder from '../AllOrder/AllOrder';
 const Cart = () => {
 
 const [cart, setCart] = useContext(CartContext);
-const [loginUser, setLoginUser] = useContext(LoginContext);
+const [location, setLocation]= useContext(LocationContext);
+const [color, setColor] = useState(false);
+
 
  const { register, handleSubmit} = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = data =>{
+    setLocation(data);
+    setColor(true)
+
+  } ;
+  
+ 
   
   const total = cart.reduce((total, crt) => crt.price + total * crt.quantity, 0);
 
@@ -43,11 +51,11 @@ const [loginUser, setLoginUser] = useContext(LoginContext);
                 
                 <form onSubmit={handleSubmit(onSubmit)}>
                         <h4>Edit Delivery Details</h4>
-                        <input  name="Deliver to door" ref={register} placeholder='Deliver to door' />
-                        <input  name="House & Rd No" ref={register} placeholder='House & Rd No'/>
-                        <input  name="Flat, suite or floor" ref={register} placeholder='Flat, suite or floor'/>
-                        <input  name="Business Name" ref={register} placeholder='Business Name'/>
-                        <input  name="Add delivery instructor" ref={register} placeholder='Add delivery instructor'/>
+                        <input  name="Deliver" ref={register} placeholder='Deliver to door' />
+                        <input  name="House" ref={register} placeholder='House & Rd No'/>
+                        <input  name="Flat" ref={register} placeholder='Flat, suite or floor'/>
+                        <input  name="Business" ref={register} placeholder='Business Name'/>
+                        <input  name="instructor" ref={register} placeholder='Add delivery instructor'/>
                         <input  className='btn' type="submit" />
                         </form>
                 </div>
@@ -79,7 +87,8 @@ const [loginUser, setLoginUser] = useContext(LoginContext);
                     
 
                 </div>
-                <button className='placeOrder'>Place Order</button>
+                <Link to='/orderConfirm'><button style={{backgroundColor:color ? 'red' : 'goldenrod'}} className='placeOrder'>Place Order</button></Link>
+                
                 
                 
                 

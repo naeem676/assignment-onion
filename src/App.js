@@ -45,17 +45,20 @@ import OrderConfirme from './components/orderConfirme/OrderConfirme';
 
 export const CartContext = createContext();
 export const LoginContext = createContext();
+export const LocationContext = createContext();
 
 
 
 function App() {
     const [cart, setCart] = useState([]);
     const [loginUser, setLoginUser]= useState({});
+    const [location, setLocation] = useState({})
     
     
   return (
       <CartContext.Provider value={[cart, setCart]}>
       <LoginContext.Provider value={[loginUser, setLoginUser]}>
+      <LocationContext.Provider value={[location, setLocation]}>
     <Router >
     
   
@@ -165,6 +168,7 @@ function App() {
     
      
     </Router>
+    </LocationContext.Provider>
     </LoginContext.Provider>
     </CartContext.Provider>
   );

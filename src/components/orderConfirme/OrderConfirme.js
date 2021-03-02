@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import location from "../../Image/uctc-map.jpg";
+import lcation from "../../Image/uctc-map.jpg";
 import bike from "../../Image/Group 1151.png";
 import rider from "../../Image/Group 1152.png";
 import './OrderConfirm.css';
+import { LocationContext } from '../../App';
 
 const OrderConfirme = () => {
+    const [location, setLocation]= useContext(LocationContext);
+    
     return (
         <div>
             <div style={{display:'flex', marginLeft:'500px'}}>
@@ -15,11 +18,13 @@ const OrderConfirme = () => {
                 <p style={{marginLeft:'400px'}}> <Link style={{textDecoration:'none'}} to='/home'>Home</Link></p>
             </div>
             <div style={{display:'flex', justifyContent:'space-evenly'}}>
-                <div> <img src={location} alt="" srcset=""/></div>
+                <div> <img src={lcation} alt="" srcset=""/></div>
                 <div style={{backgroundColor:'whiteSmoke'}}>
                 <div style={{marginLeft:'60px', marginTop:'20px'}}><img style={{width:'20%', height:'20%'}} src={bike} alt="" srcset=""/></div>
                     <div style={{backgroundColor:'white', margin:'0 60px', padding:'10px', borderRadius:'10px'}}>
                         <p>Your Location</p>
+                        {location.Deliver}
+                     
                         <p>Shop Address</p>
                         <small>Finllay Squre Restaurant</small>
                     </div>
