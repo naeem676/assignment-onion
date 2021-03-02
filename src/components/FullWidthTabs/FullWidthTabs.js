@@ -10,7 +10,7 @@ import BreakfastOrder from '../breakfastOrder/BreakfastOrder';
 import LunchOrder from '../lunchOrder/LunchOrder';
 import DinnerOrder from '../dinnerOrder/DinnerOrder';
 import  './FullWidthTabs.css';
-import { CartContext } from '../../App';
+
 
 
 function TabPanel(props) {
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const FullWidthTabs = () => {
-  const [cart, setCart] = useContext(CartContext);
+  
     const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(1);
@@ -101,7 +101,7 @@ const FullWidthTabs = () => {
      
     </div>
     <div>
-       <button style={{color: cart ? 'red' : 'gry'}} >Reviwe</button>
+       
     </div>
       </div>
     </div>

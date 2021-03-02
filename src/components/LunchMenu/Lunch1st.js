@@ -5,6 +5,7 @@ import lunch6 from "../fakedata/lunch/lunch6.png";
 
 const Lunch1st = () => {
     const[cart, setCart]= useContext(CartContext);
+    
     const [price, setPrice] = useState(23.99);
     const [count, setCount] = useState(1);
 

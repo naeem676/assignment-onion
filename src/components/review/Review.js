@@ -5,6 +5,7 @@ import AllOrder from '../AllOrder/AllOrder';
 
 const Review = () => {
     const [cart, setCart] = useContext(CartContext);
+   
     return (
         <div>
         <AllOrder cart={cart}></AllOrder>

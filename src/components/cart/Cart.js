@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { CartContext } from '../../App';
-import { fakeData } from '../fakedata/initializ';
 import './Cart.css';
 
 import { Link } from 'react-router-dom';
@@ -14,6 +13,10 @@ const Cart = () => {
     const { register, handleSubmit} = useForm();
   const onSubmit = data => console.log(data);
   const [cart, setCart]= useContext(CartContext);
+  
+ 
+ 
+  
   
   const total = cart.reduce((total, crt) => crt.price + total * crt.quantity, 0);
 

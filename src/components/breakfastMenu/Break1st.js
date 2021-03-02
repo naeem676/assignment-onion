@@ -7,7 +7,8 @@ import breakfast4 from "../fakedata/Breakfast/breakfast4.png";
 import './BreakCss.css';
 
 const Break1st = () => {
-    const [cart, setCart] = useContext(CartContext);
+    const  [cart, setCart] = useContext(CartContext);  
+    
     const [price, setPrice] = useState(6.99);
     const [count, setCount] = useState(1);
 

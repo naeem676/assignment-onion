@@ -4,7 +4,8 @@ import { CartContext } from '../../App';
 import dinner4 from "../fakedata/Dinner/dinner4.png";
 
 const Dinner5th = () => {
-    const[cart, setCart]= useContext(CartContext);
+    const [cart, setCart]= useContext(CartContext);
+    
     const [price, setPrice] = useState(21.99);
     const [count, setCount] = useState(1);
 

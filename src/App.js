@@ -35,18 +35,28 @@ import Cart from './components/cart/Cart';
 import BreakfastOrder from './components/breakfastOrder/BreakfastOrder';
 import LunchOrder from './components/lunchOrder/LunchOrder';
 import DinnerOrder from './components/dinnerOrder/DinnerOrder';
+import Login from './components/login/Login';
+import PrivateRoute from './components/privteRoute/PrivateRoute';
+import AllOrder from './components/AllOrder/AllOrder';
+
+
 
 
 export const CartContext = createContext();
+export const LoginContext = createContext();
 
 
 
 function App() {
     const [cart, setCart] = useState([]);
+    const [loginUser, setLoginUser]= useState([]);
+    
     
   return (
       <CartContext.Provider value={[cart, setCart]}>
+      <LoginContext.Provider value={[loginUser, setLoginUser]}>
     <Router >
+    
   
     <Switch>
       <Route exact path='/'>
@@ -123,9 +133,7 @@ function App() {
       <Route path='/dinner6th'>
           <Dinner6th></Dinner6th>
       </Route>
-      <Route path='/cart'>
-          <Cart></Cart>
-      </Route>
+     
       <Route path='/breakfastOrder'>
           <BreakfastOrder></BreakfastOrder>
       </Route>
@@ -135,19 +143,24 @@ function App() {
       <Route path='/dinnerOrder'>
           <DinnerOrder></DinnerOrder>
       </Route>
+      <Route path='/login'>
+          <Login></Login>
+
+      </Route>
+        <Route path='/cart' >
+          <Cart></Cart>
+      </Route>
       
       <Route path='*'>
           <NoMatch></NoMatch>
 
       </Route>
+    
     </Switch>
-    
-    
-    
-    
     
      
     </Router>
+    </LoginContext.Provider>
     </CartContext.Provider>
   );
 }

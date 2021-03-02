@@ -5,6 +5,7 @@ import dinner1 from "../fakedata/Dinner/dinner1.png";
 
 const Dinner3rd = () => {
     const[cart, setCart]= useContext(CartContext);
+    
     const [price, setPrice] = useState(16.99);
     const [count, setCount] = useState(1);
 
