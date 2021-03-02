@@ -1,0 +1,9 @@
+.contact{
+    width: 70%;
+    height: 20%;
+    padding: 10px;
+    background-color: rgb(228, 0, 46);
+    color: white;
+    border: thistle;
+    border-radius: 10px;
+}

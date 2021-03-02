@@ -38,6 +38,7 @@ import DinnerOrder from './components/dinnerOrder/DinnerOrder';
 import Login from './components/login/Login';
 import PrivateRoute from './components/privteRoute/PrivateRoute';
 import AllOrder from './components/AllOrder/AllOrder';
+import OrderConfirme from './components/orderConfirme/OrderConfirme';
 
 
 
@@ -49,7 +50,7 @@ export const LoginContext = createContext();
 
 function App() {
     const [cart, setCart] = useState([]);
-    const [loginUser, setLoginUser]= useState([]);
+    const [loginUser, setLoginUser]= useState({});
     
     
   return (
@@ -147,8 +148,12 @@ function App() {
           <Login></Login>
 
       </Route>
-        <Route path='/cart' >
+        <PrivateRoute path='/cart' >
           <Cart></Cart>
+      </PrivateRoute>
+      <Route path='/orderConfirm'>
+          <OrderConfirme></OrderConfirme>
+
       </Route>
       
       <Route path='*'>

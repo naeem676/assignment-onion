@@ -31,13 +31,13 @@ input {
   input[type="submit"] {
     background: #ec5990;
     color: white;
-    text-transform: uppercase;
+    
     border: none;
     margin-top: 40px;
     padding: 20px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 100;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
   }
   
   .btn {

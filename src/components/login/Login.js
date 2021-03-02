@@ -46,6 +46,10 @@ const Login = () => {
     success: false,
     })
 
+    
+  const history = useHistory();
+  const location = useLocation();
+  let { from } = location.state || { from: { pathname: "/" } };
   
 // const { register, handleSubmit} = useForm();
 //   const onSubmit = data => 
@@ -55,10 +59,12 @@ const handleSubmit=(e)=>{
     firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
     .then((res) => {
       
+      
       const newUserInfo = {...user};
       newUserInfo.error = '';
       newUserInfo.success = true;
-      setUser(newUserInfo)
+      setUser(newUserInfo);
+      updateName(user.name);
       
       
     })
@@ -74,11 +80,14 @@ const handleSubmit=(e)=>{
   }
   if(!newUser && user.email && user.password){
     firebase.auth().signInWithEmailAndPassword(user.email, user.password)
-  .then((userCredential) => {
+  .then((res) => {
     const newUserInfo = {...user};
       newUserInfo.error = '';
       newUserInfo.success = true;
-      setUser(newUserInfo)
+      setUser(newUserInfo);
+      setLoginUser(newUserInfo);
+      history.replace(from)
+     
       
   })
   .catch((error) => {
@@ -122,25 +131,38 @@ const handleBlur=(e)=>{
 
 }
 
+const updateName = name => {
+  const  user = firebase.auth().currentUser;
+
+        user.updateProfile({
+          displayName: name
+          
+        }).then(function() {
+          
+        }).catch(function(error) {
+         
+        });
+
+}
+
+
 const classes = useStyles();
     
  
    
 
-  // const history = useHistory();
-  // const location = useLocation();
-  // let { from } = location.state || { from: { pathname: "/" } };
     return (
         <div className='login-banar'>
         <div><img style={{width:'20%', height:'10%', marginTop:'100px'}} src={logo2} alt="" srcset=""/></div>
              
              <div style={{ marginTop:'20px', }}>
+             <p>email:{loginUser.email}</p>
              <form onSubmit={handleSubmit}>
                         
                        { newUser && <input  name="name" onBlur={handleBlur}  placeholder='Name' />}
                         <input  name="email" onBlur={handleBlur}   type='email' placeholder='Email' required/>
                         <input  name="password" onBlur={handleBlur}   type='password' placeholder='Password' required/>
-                        <input  className='btn' type="submit" />
+                        <input className='btn' type="submit" value={newUser ? 'sign up' : 'sign in'} />
                         </form>
                        <div className={classes.root}>
                        {newUser ? <Button color="primary" onClick={()=> setNewUser(false)}>Already have an account</Button> :
