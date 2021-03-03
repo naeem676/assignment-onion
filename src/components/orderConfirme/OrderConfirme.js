@@ -1,13 +1,33 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import lcation from "../../Image/uctc-map.jpg";
 import bike from "../../Image/Group 1151.png";
 import rider from "../../Image/Group 1152.png";
 import './OrderConfirm.css';
-import { LocationContext } from '../../App';
+import { CartContext, LocationContext, LoginContext } from '../../App';
 
 const OrderConfirme = () => {
     const [location, setLocation]= useContext(LocationContext);
+    const [cart, setCart] = useContext(CartContext);
+    const [loginUser, setLoginUser] = useContext(LoginContext)
+
+    const history = useHistory();
+
+
+    const logOutHandle = () =>{
+        setLocation({});
+        setCart([]);
+        setLoginUser({});
+        history.push('/home')
+    }
+   
+
+    const orderSuccess = ()=>{
+        history.push('/orderSuccess');
+        
+    }
+
+    
     
     return (
         <div>
@@ -15,7 +35,8 @@ const OrderConfirme = () => {
                 <p style={{marginLeft:'40px'}}> <Link style={{textDecoration:'none'}} to='/breakfastOrder'>Breakfast</Link></p>
                 <p style={{marginLeft:'40px'}}> <Link style={{textDecoration:'none'}} to='/lunchOrder'>Lunch</Link></p>
                 <p style={{marginLeft:'40px'}}> <Link style={{textDecoration:'none'}} to='/dinnerOrder'>Dinner</Link></p>
-                <p style={{marginLeft:'400px'}}> <Link style={{textDecoration:'none'}} to='/home'>Home</Link></p>
+                <button onClick={logOutHandle} className='log-out'>Log out</button>
+                <p style={{marginLeft:'100px'}}> <Link style={{textDecoration:'none'}} to='/home'>Home</Link></p>
             </div>
             <div style={{display:'flex', justifyContent:'space-evenly'}}>
                 <div> <img src={lcation} alt="" srcset=""/></div>
@@ -37,7 +58,7 @@ const OrderConfirme = () => {
                     <small style={{marginTop:'20px'}}>Ripon</small>
                     </div>
 
-                    <div style={{marginLeft:'130px'}}><button className='contact'>Contact</button></div>
+                    <div style={{marginLeft:'130px'}}><button onClick={orderSuccess} className='contact'>Contact</button></div>
                     
                 </div>
             </div>

@@ -7,3 +7,13 @@
     border: thistle;
     border-radius: 10px;
 }
+.log-out{
+    width: 30%;
+    height: 10%;
+    background-color: white;
+    border: white;
+    color: blue;
+    margin-top: 20px;
+    margin-left: 40px;
+    font-size: 15px;
+}

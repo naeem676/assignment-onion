@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { CartContext, LocationContext, LoginContext } from '../../App';
+import { CartContext, LocationContext} from '../../App';
 import './Cart.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory} from 'react-router-dom';
 import AllOrder from '../AllOrder/AllOrder';
 
 const Cart = () => {
@@ -10,14 +10,28 @@ const Cart = () => {
 const [cart, setCart] = useContext(CartContext);
 const [location, setLocation]= useContext(LocationContext);
 const [color, setColor] = useState(false);
+const history = useHistory();
 
 
  const { register, handleSubmit} = useForm();
-  const onSubmit = data =>{
-    setLocation(data);
-    setColor(true)
+  const onSubmit = data => {
+      if(data.Deliver === undefined){
+          setColor(false)
+      }
+      if(data.Deliver){
+          setColor(true)
+      }
 
+    setLocation(data);
+   
   } ;
+
+  
+
+ 
+
+  
+  
   
  
   
@@ -36,7 +50,19 @@ const [color, setColor] = useState(false);
        const mins = total;
        return mins;
    }
+
+  
    
+   
+
+  
+
+   const orderConfirm = ()=>{
+       if (color) {
+           history.push('/orderConfirm')
+           
+       }
+    }
     
     return (
         <div>
@@ -87,7 +113,7 @@ const [color, setColor] = useState(false);
                     
 
                 </div>
-                <Link to='/orderConfirm'><button style={{backgroundColor:color ? 'red' : 'goldenrod'}} className='placeOrder'>Place Order</button></Link>
+                <button onClick={orderConfirm} style={{backgroundColor:color ? 'red' : 'goldenrod'}} className='placeOrder'>Place Order</button>
                 
                 
                 

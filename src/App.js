@@ -39,6 +39,7 @@ import Login from './components/login/Login';
 import PrivateRoute from './components/privteRoute/PrivateRoute';
 import AllOrder from './components/AllOrder/AllOrder';
 import OrderConfirme from './components/orderConfirme/OrderConfirme';
+import OrderSuccess from './components/OrderSuccess/OrderSuccess';
 
 
 
@@ -154,10 +155,14 @@ function App() {
         <PrivateRoute path='/cart' >
           <Cart></Cart>
       </PrivateRoute>
-      <Route path='/orderConfirm'>
+      <PrivateRoute path='/orderConfirm'>
           <OrderConfirme></OrderConfirme>
 
-      </Route>
+      </PrivateRoute>
+      <PrivateRoute path='/orderSuccess'>
+          <OrderSuccess></OrderSuccess>
+
+      </PrivateRoute>
       
       <Route path='*'>
           <NoMatch></NoMatch>
