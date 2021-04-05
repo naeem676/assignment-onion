@@ -3,8 +3,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Delivery from './components/delivary/Delivery';
 import Footer from './components/footer/Footer';
@@ -37,12 +36,8 @@ import LunchOrder from './components/lunchOrder/LunchOrder';
 import DinnerOrder from './components/dinnerOrder/DinnerOrder';
 import Login from './components/login/Login';
 import PrivateRoute from './components/privteRoute/PrivateRoute';
-import AllOrder from './components/AllOrder/AllOrder';
 import OrderConfirme from './components/orderConfirme/OrderConfirme';
 import OrderSuccess from './components/OrderSuccess/OrderSuccess';
-
-
-
 
 export const CartContext = createContext();
 export const LoginContext = createContext();

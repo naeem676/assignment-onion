@@ -1,8 +1,10 @@
+import env from "react-dotenv";
+
 export const firebaseConfig = {
-    apiKey: "AIzaSyD-LiZfJFcUBQInttEBoSoBSJYZFeOMdPc",
-    authDomain: "assignment-onion.firebaseapp.com",
-    projectId: "assignment-onion",
-    storageBucket: "assignment-onion.appspot.com",
-    messagingSenderId: "776270474331",
-    appId: "1:776270474331:web:9efff044e1b8c481d3237e"
+    apiKey: `${env.API_KEY}`,
+    authDomain: `${env.AUTH_DOMAIN}`,
+    projectId: `${env.PROJECT_ID}`,
+    storageBucket: `${env.STORAGE_BUCKET}`,
+    messagingSenderId: `${env.MESSAGING_SENDER_ID}`,
+    appId: `${env.APP_ID}`
   };
